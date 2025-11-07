@@ -473,7 +473,7 @@ class FraudDetectionService {
       alert.action = action;
       alert.reviewedAt = new Date();
       alert.comments = comments;
-      alert.assignedTo = 'Dhruvi';
+      alert.assignedTo = 'Mukul';
 
       this.actions.push({
         alertId,
@@ -481,7 +481,7 @@ class FraudDetectionService {
         action,
         comments,
         timestamp: new Date(),
-        analyst: 'Dhruvi'
+        analyst: 'Mukul'
       });
 
       this.saveToLocalStorage();
