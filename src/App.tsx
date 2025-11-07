@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react';
-import { AlertTriangle, CheckCircle, XCircle, TrendingUp, Activity, Clock, Shield, Filter, Search, Eye, Lock, Unlock, AlertCircle, BarChart3, Database, Zap } from 'lucide-react';
+import { AlertTriangle, CheckCircle, XCircle, TrendingUp, Activity, Clock, Shield, Filter, Search, Eye, Lock, Unlock, AlertCircle, BarChart3, Database, Zap, Play, Square, Trash2, Ban, ArrowUpCircle, Power } from 'lucide-react';
 import './FraudDetectionApp.css';
 
 class FraudDetectionService {
@@ -473,7 +473,7 @@ class FraudDetectionService {
       alert.action = action;
       alert.reviewedAt = new Date();
       alert.comments = comments;
-      alert.assignedTo = 'sukshamrainaa';
+      alert.assignedTo = 'Dhruvi';
 
       this.actions.push({
         alertId,
@@ -481,7 +481,7 @@ class FraudDetectionService {
         action,
         comments,
         timestamp: new Date(),
-        analyst: 'sukshamrainaa'
+        analyst: 'Dhruvi'
       });
 
       this.saveToLocalStorage();
@@ -591,7 +591,7 @@ const FraudDetectionApp = () => {
               <div className="header-text">
                 <h1 className="header-title">Advanced Fraud Detection System</h1>
                 <p className="header-subtitle">
-                  Industry-Standard ML Model v3.2.0 | User: sukshamrainaa | {getCurrentDateTime()}
+                  Industry-Standard ML Model v3.2.0 | User: Mukul | {getCurrentDateTime()}
                 </p>
               </div>
             </div>
@@ -600,7 +600,17 @@ const FraudDetectionApp = () => {
                 onClick={() => setIsStreaming(!isStreaming)}
                 className={`stream-btn ${isStreaming ? 'stream-btn-stop' : 'stream-btn-start'}`}
               >
-                {isStreaming ? 'Stop Stream' : 'Start Stream'}
+                {isStreaming ? (
+                  <>
+                    <Square className="btn-icon" />
+                    Stop Stream
+                  </>
+                ) : (
+                  <>
+                    <Play className="btn-icon" />
+                    Start Stream
+                  </>
+                )}
               </button>
               {isStreaming && (
                 <div className="live-indicator">
@@ -772,8 +782,8 @@ const DashboardTab = ({ stats, alerts }) => {
             </>
           ) : (
             <>
-              <XCircle className="btn-icon" />
-              🗑️ Clear Database
+              <Trash2 className="btn-icon" />
+              Clear Database
             </>
           )}
         </button>
@@ -1164,14 +1174,14 @@ const AlertDetailsPanel = ({ alert, handleAction }) => {
               onClick={() => handleAction(alert.id, 'BLOCKED', comments)}
               className="action-btn action-btn-block"
             >
-              <XCircle className="action-btn-icon" />
+              <Ban className="action-btn-icon" />
               Block
             </button>
             <button
               onClick={() => handleAction(alert.id, 'ESCALATED', comments)}
               className="action-btn action-btn-escalate"
             >
-              <AlertTriangle className="action-btn-icon" />
+              <ArrowUpCircle className="action-btn-icon" />
               Escalate
             </button>
           </div>

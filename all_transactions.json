@@ -1,0 +1,1 @@
+{"id":"TXN0099","accountId":"ACC0099","amount":85000,"merchant":"Amazon India","category":"SHOPPING","location":{"city":"Delhi","country":"IN"},"cvvMatch":false,"avsMatch":true,"device":"Android 14","isVPN":false,"isTor":false,"previousDeclines":2,"accountAge":10,"timestamp":"2025-11-07T14:50:24.690Z"}
